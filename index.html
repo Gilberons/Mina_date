@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>یه سوال مهم ❤️</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:tahoma,sans-serif}
+body{background:linear-gradient(135deg,#ffdde1,#ee9ca7);display:flex;justify-content:center;align-items:center;height:100vh;overflow:hidden}
+.container{text-align:center}
+h1{font-size:40px;margin-bottom:50px;color:#fff}
+button{border:none;border-radius:12px;cursor:pointer;transition:.3s;margin:15px;font-weight:bold}
+#yesBtn{background:#28a745;color:#fff;font-size:24px;padding:18px 40px}
+#noBtn{background:#dc3545;color:#fff;font-size:24px;padding:18px 40px}
+#message{margin-top:35px;font-size:28px;color:#fff}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>❤️ با من میای دیت؟ ❤️</h1>
+<button id="yesBtn">آره 😍</button>
+<button id="noBtn">نه 😒</button>
+<div id="message"></div>
+</div>
+<script>
+const yes=document.getElementById("yesBtn");
+const no=document.getElementById("noBtn");
+const msg=document.getElementById("message");
+let scale=1;
+const texts=["مطمئنی؟ 🥺","یه بار دیگه فکر کن 😅","این جواب قابل قبول نیست 😂","دارم ناراحت میشم 😢","باشه ولی دوباره امتحان کن ❤️","آخرش آره رو میزنی 😁"];
+let index=0;
+no.onclick=function(){
+msg.innerHTML=texts[index%texts.length];
+index++;
+scale+=0.25;
+yes.style.transform=`scale(${scale})`;
+if(scale>2){yes.style.fontSize="34px";}
+if(scale>3){
+yes.style.position="fixed";
+yes.style.top="0";yes.style.left="0";
+yes.style.width="100vw";yes.style.height="100vh";
+yes.style.borderRadius="0";
+yes.style.fontSize="60px";
+no.style.display="none";
+msg.innerHTML="دیگه فقط یه گزینه مونده 😍";
+}};
+yes.onclick=function(){
+document.body.innerHTML='<div style="display:flex;justify-content:center;align-items:center;flex-direction:column;height:100vh;background:linear-gradient(135deg,#ff9a9e,#fad0c4);color:white;text-align:center"><div style="font-size:80px;">❤️🥰❤️</div><h1 style="font-size:50px;margin-top:20px;">قرارمون قطعی شد!</h1><p style="font-size:30px;margin-top:20px;">منتظرم بهترین دیت زندگیمون باشه ✨</p></div>';
+};
+</script>
+</body>
+</html>
